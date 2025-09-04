@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from '../assets/avatar2.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaTiktok } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
@@ -8,15 +9,15 @@ import { fadeIn } from '../variants'
 
 const Banner = () => {
   return (
-    <section className='min-h-[85vh] lg:min-h-[78vh] flex items-center' id='home'>
+  <section className='min-h-[70vh] lg:min-h-[60vh] flex items-start pt-8' id='home'>
       <div className='container mx-auto'>
-        <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
-          <div className='flex-1 text-center font-secondary lg:text-left'>
+  <div className='flex flex-col gap-y-4 lg:flex-row lg:items-start lg:gap-x-12'>
+          <div className='flex-1 text-center font-secondary lg:text-left mt-0'>
             <motion.h1
               variants={fadeIn('up', 0.3)}
               initial='hidden' whileInView={'show'}
               viewport={{once: false, amount: 0.7}}
-              className='text-[55px] font-bold leading-[0.8] lg:text-[110px]'
+              className='text-[40px] font-bold leading-[0.8] lg:text-[80px]'
             >
               HYDRA <span>ROSARIO</span>
             </motion.h1>
@@ -24,19 +25,19 @@ const Banner = () => {
               variants={fadeIn('up', 0.4)}
               initial='hidden' whileInView={'show'}
               viewport={{once: false, amount: 0.7}}
-              className='mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]'
+              className='mb-6 text-[28px] lg:text-[48px] font-secondary font-semibold uppercase leading-[1]'
             >
-              <span className='text-white mr-4'>I am a</span>
+              <span className='text-white mr-4'>Soy</span>
               <TypeAnimation sequence={[
-                'Developer',
+                'Productor',
                 2000,
-                'Producer',
+                'Desarrollador',
                 2000,
-                'Prompt Engineer',
+                'Ingeniero en IA',
                 2000
               ]}
               speed={50}
-              className='text-accent'
+              className='text-gradient'
               wrapper='span'
               repeat={Infinity}
               />
@@ -47,33 +48,33 @@ const Banner = () => {
               viewport={{once: false, amount: 0.7}}
               className='mb-8 max-w-lg mx-auto lg:mx-0'
             >
-            My company is a monster with three heads, the first is focused on music production, the second head is focused on web development and the third is focused on Artificial Intelligence.
+            Transformo ideas en páginas web, música y tecnología. Si buscas innovación, creatividad y soluciones que marcan la diferencia, HHHESTUDIOS es el lugar. Scrollea para ver cómo puedo potenciar tu proyecto.
             </motion.p>
             <motion.div
               variants={fadeIn('up', 0.6)}
               initial='hidden' whileInView={'show'}
               viewport={{once: false, amount: 0.7}}
-              className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'
+              className='flex max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0'
             >
               <button className='btn btn-lg'>
-                <a href='https://www.linkedin.com/in/HydraRosario/'>
-                  Contact me
+                <a href='https://www.instagram.com/hydra_rosario/' target='_blank' rel='noopener noreferrer'>
+                  <BsInstagram/>
                 </a>
               </button>
               <button className='btn btn-lg'>
-              <a href='https://www.youtube.com/@HydraRosario'>
-                <FaYoutube/>
-              </a>
+                <a href='https://www.youtube.com/@HydraRosario' target='_blank' rel='noopener noreferrer'>
+                  <FaYoutube/>
+                </a>
               </button>
               <button className='btn btn-lg'>
-              <a href='https://github.com/HydraRosario'>
-                <FaGithub/>
-              </a>
+                <a href='https://github.com/HydraRosario' target='_blank' rel='noopener noreferrer'>
+                  <FaGithub/>
+                </a>
               </button>
               <button className='btn btn-lg'>
-              <a href='https://www.instagram.com/hydra_rosario/'>
-                <BsInstagram/>
-              </a>
+                <a href='https://www.tiktok.com/@hhhestudios_' target='_blank' rel='noopener noreferrer'>
+                  <FaTiktok/>
+                </a>
               </button>
             </motion.div>
             <motion.div

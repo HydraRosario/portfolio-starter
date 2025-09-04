@@ -19,9 +19,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0a0a0a',
+        primary: '#ff0000', // Rojo fundamental
+        secondary: '#0044ff', // Azul fundamental
         accent: '#B809C3',
+        gradientStart: '#ff0000',
+        gradientEnd: '#0044ff',
       },
+      backgroundImage: theme => ({
+        ...theme('backgroundImage'),
+        'red-blue-gradient': 'linear-gradient(90deg, #ff0000 0%, #0044ff 100%)',
+      }),
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
         about: "url('./assets/about.png')",
