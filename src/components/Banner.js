@@ -54,26 +54,26 @@ const Banner = () => {
               variants={fadeIn('up', 0.6)}
               initial='hidden' whileInView={'show'}
               viewport={{once: false, amount: 0.7}}
-              className='flex max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0'
+              className='grid grid-cols-2 gap-3 items-center mb-6 mx-auto lg:mx-0 lg:flex lg:gap-x-6'
             >
-              <button className='btn btn-lg'>
-                <a href='https://www.instagram.com/hydra_rosario/' target='_blank' rel='noopener noreferrer'>
-                  <BsInstagram/>
+              <button className='btn btn-lg flex items-center justify-center'>
+                <a className='flex items-center justify-center' href='https://www.instagram.com/hydra_rosario/' target='_blank' rel='noopener noreferrer'>
+                  <BsInstagram className='w-5 h-5'/>
                 </a>
               </button>
-              <button className='btn btn-lg'>
-                <a href='https://www.youtube.com/@HydraRosario' target='_blank' rel='noopener noreferrer'>
-                  <FaYoutube/>
+              <button className='btn btn-lg flex items-center justify-center'>
+                <a className='flex items-center justify-center' href='https://www.youtube.com/@HydraRosario' target='_blank' rel='noopener noreferrer'>
+                  <FaYoutube className='w-5 h-5'/>
                 </a>
               </button>
-              <button className='btn btn-lg'>
-                <a href='https://github.com/HydraRosario' target='_blank' rel='noopener noreferrer'>
-                  <FaGithub/>
+              <button className='btn btn-lg flex items-center justify-center'>
+                <a className='flex items-center justify-center' href='https://github.com/HydraRosario' target='_blank' rel='noopener noreferrer'>
+                  <FaGithub className='w-5 h-5'/>
                 </a>
               </button>
-              <button className='btn btn-lg'>
-                <a href='https://www.tiktok.com/@hhhestudios_' target='_blank' rel='noopener noreferrer'>
-                  <FaTiktok/>
+              <button className='btn btn-lg flex items-center justify-center'>
+                <a className='flex items-center justify-center' href='https://www.tiktok.com/@hhhestudios_' target='_blank' rel='noopener noreferrer'>
+                  <FaTiktok className='w-5 h-5'/>
                 </a>
               </button>
             </motion.div>
