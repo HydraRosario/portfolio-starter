@@ -5,7 +5,7 @@ import {fadeIn} from '../variants';
 
 const Contact = () => {
   return (
-    <div className='py-16 lg:section' id='contact'>
+    <div className='py-16 lg:section min-h-screen' id='contact'>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row'>
           {/* text */}
@@ -16,9 +16,9 @@ const Contact = () => {
             viewport={{once: false, amount: 0.3 }}
             className='flex-1 flex justify-start items-center'>
             <div>
-              <h4 className='text-x1 uppercase text-gradient font-medium mb-2 tracking-wide'>Get in touch</h4>
+              <h4 className='text-x1 uppercase text-gradient font-medium mb-2 tracking-wide'>Ponte en contacto</h4>
               <h2 className='text-[45px] lg:text-[90px] leading-none mb-12'>
-                Let's work <br /> together!
+                ¡Trabajemos <br /> juntos!
               </h2>
             </div>
           </motion.div>
@@ -35,19 +35,19 @@ const Contact = () => {
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transitio-all'
               type='text'
               name='name'
-              placeholder='Your name'
+              placeholder='Tu nombre'
             />
             <input
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transitio-all'
               type='text'
               name='email'
-              placeholder='Your email'
+              placeholder='Tu email'
             />
             <textarea
               className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transitio-all resize-none mb-12'
-              placeholder='Your message'
+              placeholder='Tu mensaje'
             ></textarea>
-            <button className='btn btn-lg'>Send message</button>
+            <button className='btn btn-lg'>Enviar mensaje</button>
           </motion.form>
         </div>
       </div>

@@ -15,11 +15,13 @@ const Services = () => {
   const [isPanning, setIsPanning] = useState(false);
   const [startPointer, setStartPointer] = useState({ x: 0, y: 0 });
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const [dynamicZoom, setDynamicZoom] = useState(1.05);
 
   const openPopup = (index) => {
     setPopupIndex(index);
-  setZoomed(true);
-  setTranslate({ x: 0, y: 0 });
+    setZoomed(true);
+    setTranslate({ x: 0, y: 0 });
+    setDynamicZoom(1.05);
   };
   const closePopup = () => {
     setPopupIndex(null);
@@ -27,11 +29,11 @@ const Services = () => {
   };
   const nextPopup = () => {
     setPopupIndex((popupIndex + 1) % catalogos.length);
-  setZoomed(true);
+    setZoomed(true);
   };
   const prevPopup = () => {
     setPopupIndex((popupIndex - 1 + catalogos.length) % catalogos.length);
-  setZoomed(true);
+    setZoomed(true);
   };
 
   // Ensure zoom/translate reset when popupIndex changes
@@ -39,6 +41,18 @@ const Services = () => {
     setZoomed(true);
     setTranslate({ x: 0, y: 0 });
     setIsPanning(false);
+    setDynamicZoom(1.05);
+  }, [popupIndex]);
+
+  useEffect(() => {
+    if (popupIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [popupIndex]);
 
   // Handlers for pointer-based panning when zoomed
@@ -64,6 +78,13 @@ const Services = () => {
     try { e.currentTarget.releasePointerCapture && e.currentTarget.releasePointerCapture(e.pointerId); } catch (err) {}
   };
 
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const zoomFactor = 0.1;
+    const newZoom = dynamicZoom + (e.deltaY > 0 ? -zoomFactor : zoomFactor);
+    setDynamicZoom(Math.max(0.5, Math.min(newZoom, 3)));
+  };
+
   return (
     <section className='section' id='services'>
       <div className='container mx-auto'>
@@ -83,7 +104,7 @@ const Services = () => {
             <span className='text-sm text-white'>{catalogos[1].alt}</span>
           </div>
           <div className='flex items-center justify-center w-full lg:w-auto'>
-            <div className='w-full lg:w-3 lg:h-[340px] h-3 rounded-md' style={{background: 'linear-gradient(90deg, #ff0000 0%, #0044ff 100%)', boxShadow: '0 0 8px #ff0000, 0 0 8px #0044ff'}}></div>
+            <div className='w-full lg:w-3 lg:h-[280px] h-3 rounded-md' style={{background: 'linear-gradient(90deg, #ff0000 0%, #0044ff 100%)', boxShadow: '0 0 8px #ff0000, 0 0 8px #0044ff'}}></div>
           </div>
           <div className='flex flex-col items-center cursor-pointer flex-1'>
             <img
@@ -95,7 +116,7 @@ const Services = () => {
             <span className='text-sm text-white'>{catalogos[0].alt}</span>
           </div>
         </div>
-        <div className='flex justify-center mt-12'>
+        <div className='flex justify-center mt-12 lg:-mt-8'>
           <div className='flex flex-col items-center'>
             <img
               src={catalogos[2].src}
@@ -135,6 +156,7 @@ const Services = () => {
                   onPointerMove={onPointerMove}
                   onPointerUp={endPan}
                   onPointerCancel={endPan}
+                  onWheel={handleWheel}
                 >
                   <img
                     src={catalogos[popupIndex].src}
@@ -143,7 +165,7 @@ const Services = () => {
                     style={{
                       maxWidth: '100%',
                       maxHeight: '100%',
-                      transform: `translate(${translate.x}px, ${translate.y}px) scale(${zoomed ? 1.2 : 1})`,
+                      transform: `translate(${translate.x}px, ${translate.y}px) scale(${dynamicZoom})`,
                       transition: isPanning ? 'none' : 'transform 300ms ease',
                       touchAction: zoomed ? 'none' : 'auto',
                     }}
