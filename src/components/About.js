@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants'
 import { BsInstagram } from 'react-icons/bs';
-import { FaYoutube, FaFacebook } from 'react-icons/fa';
+import { FaYoutube, FaFacebook, FaTiktok } from 'react-icons/fa';
 
 const About = () => {
   const [ref, inView] = useInView({ threshold: 0.5 });
@@ -74,6 +74,11 @@ const About = () => {
               <button className='btn btn-lg flex items-center justify-center'>
                 <a className='flex items-center justify-center' href='https://www.facebook.com/profile.php?id=61579998417355' target='_blank' rel='noopener noreferrer'>
                   <FaFacebook className='w-5 h-5'/>
+                </a>
+              </button>
+              <button className='btn btn-lg flex items-center justify-center'>
+                <a className='flex items-center justify-center' href='https://www.tiktok.com/@hhhestudios' target='_blank' rel='noopener noreferrer'>
+                  <FaTiktok className='w-5 h-5'/>
                 </a>
               </button>
             </div>

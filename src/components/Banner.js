@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from '../assets/avatar2.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa';
+
 import { BsInstagram } from 'react-icons/bs';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
@@ -71,11 +71,7 @@ const Banner = () => {
                   <FaGithub className='w-5 h-5'/>
                 </a>
               </button>
-              <button className='btn btn-lg flex items-center justify-center'>
-                <a className='flex items-center justify-center' href='https://www.tiktok.com/@hhhestudios_' target='_blank' rel='noopener noreferrer'>
-                  <FaTiktok className='w-5 h-5'/>
-                </a>
-              </button>
+
             </motion.div>
             <motion.div
               variants={fadeIn('up', 0.7)}
