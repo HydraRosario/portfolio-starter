@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary-red: #ff0000;
   --primary-blue: #0044ff;
@@ -11,11 +15,6 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(90deg, #ff0000 0%, #0044ff 100%);
 }
-/* ...existing code... */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 .btn {
   background: linear-gradient(90deg, #ff0000 0%, #0044ff 100%);
@@ -25,7 +24,6 @@ body {
 .btn:hover {
   background: linear-gradient(90deg, #0044ff 0%, #ff0000 100%);
 }
-
 
 .gradient,
 .active {

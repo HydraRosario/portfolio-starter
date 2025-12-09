@@ -30,9 +30,9 @@ module.exports = {
         'red-blue-gradient': 'linear-gradient(90deg, #ff0000 0%, #0044ff 100%)',
       }),
       backgroundImage: {
-        site: "url('./assets/site-bg.jpg')",
-        about: "url('./assets/about.png')",
-        services: "url('./assets/services.png')",
+        site: "url('../sites/portfolio/assets/site-bg.jpg')",
+        about: "url('../sites/portfolio/assets/about.png')",
+        services: "url('../sites/portfolio/assets/services.png')",
       },
     },
   },
