@@ -1,24 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // components
-import Banner from './components/Banner';
-import Header from './components/Header';
-import Nav from './components/Nav';
-import About from './components/About';
-import Services from './components/Services';
-import Work from './components/Work';
-import Contact from './components/Contact';
+import PortfolioLayout from './components/PortfolioLayout';
+import EbooksPage from './components/EbooksPage';
 
 const App = () => {
   return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-      <Header />
-      <Banner />
-      <Nav />
-      <About />
-      <Services />
-      <Work />
-      <Contact />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<PortfolioLayout />} />
+        <Route path='/ebooks' element={<EbooksPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
